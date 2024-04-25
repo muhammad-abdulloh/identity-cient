@@ -31,6 +31,10 @@ import { StudentDetailsComponent } from './admin/students/student-details/studen
 import { StudentProfileComponent } from './admin/students/student-profile/student-profile.component';
 import { UserProfileComponent } from './admin/users/user-profile/user-profile.component';
 import { TranslocoRootModule } from './transloco-root.module';
+import { ChildComponent } from './examples/child/child.component';
+import { ParentComponent } from './examples/parent/parent.component';
+import { IdemDetailComponent } from './examples/idem-detail/idem-detail.component';
+import { ItemOutputComponent } from './examples/item-output/item-output.component';
 
 
 
@@ -46,7 +50,11 @@ import { TranslocoRootModule } from './transloco-root.module';
     StudentsComponent,
     StudentDetailsComponent,
     StudentProfileComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ChildComponent,
+    ParentComponent,
+    IdemDetailComponent,
+    ItemOutputComponent
   ],
   imports: [
     BrowserModule,

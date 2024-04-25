@@ -15,3 +15,18 @@
 
 <h1>{{'form.firstName' | transloco}}</h1>
 <h1>{{'form.lastName' | transloco}}</h1>
+
+<!-- davay item -->
+<h1>item detailsdan</h1>
+
+<app-idem-detail [item]="currentItem"></app-idem-detail>
+
+
+<h1>outputdan</h1>
+
+<app-item-output (newItemEvent)="addItem($event)"></app-item-output>
+
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>

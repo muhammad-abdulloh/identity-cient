@@ -8,6 +8,13 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class AppComponent {
   title = 'identity-cient';
+  currentItem = 'Television';
+
+  items = ['item1', 'item2', 'item3', 'item4'];
+
+  addItem(newItem: string){
+    this.items.push(newItem);
+  }
 
   constructor(private readonly translocoService: TranslocoService){
     this.translocoService.translate('title')
