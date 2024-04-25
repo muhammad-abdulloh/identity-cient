@@ -11,6 +11,12 @@ import { jwtDecode } from 'jwt-decode';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
+
+  constructor() {
+    this.iterator +=1;
+    console.log('console dan kegan');
+    console.log(this.iterator);
+  }
   
   matSnackBar = inject(MatSnackBar);
   router = inject(Router);
@@ -21,6 +27,10 @@ export class LoginComponent implements OnInit {
   decodedToken: any | null;
   tokenKey = 'token' 
   roles: string[] = [];
+  iterator = 0;
+
+  tokenDecoded : any;
+
   login(){
     this.authService.login(this.form.value).subscribe(
       {
@@ -71,5 +81,17 @@ export class LoginComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', Validators.required],
       });
+
+      
+      this.tokenDecoded = jwtDecode(localStorage.getItem(this.tokenKey)!)
+      console.log('decoded token');
+      console.log(this.tokenDecoded);
+      console.log('data kelyabdi');
+        console.log(Date.now());
+
+      if(this.tokenDecoded.exp * 1000 < Date.now()){
+        this.router.navigate(['/register'])
+      }
+    
     }
 }

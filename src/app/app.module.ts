@@ -30,6 +30,7 @@ import { StudentsComponent } from './admin/students/students.component';
 import { StudentDetailsComponent } from './admin/students/student-details/student-details.component';
 import { StudentProfileComponent } from './admin/students/student-profile/student-profile.component';
 import { UserProfileComponent } from './admin/users/user-profile/user-profile.component';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 
@@ -59,7 +60,8 @@ import { UserProfileComponent } from './admin/users/user-profile/user-profile.co
     ReactiveFormsModule,
     MatSnackBarModule,
     RouterLink,
-    HttpClientModule
+    HttpClientModule,
+    TranslocoRootModule
   ],
   providers: [
     provideAnimationsAsync(), 
